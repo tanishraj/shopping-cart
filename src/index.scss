@@ -1,0 +1,24 @@
+@import "css-config/breakpoints.scss";
+@import "css-config/mixins.scss";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Serif", serif;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 500;
+}
+
+.container {
+  max-width: $screen-xxl;
+  margin: 0 auto;
+  padding: 20px 10px;
+}

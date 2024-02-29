@@ -1,0 +1,43 @@
+@import "../../../css-config/mixins.scss";
+@import "../../../css-config/variables.scss";
+
+.quantity-container {
+  display: flex;
+  gap: 5px;
+
+  @include sm {
+    justify-content: flex-end;
+  }
+
+  .input-container {
+    width: 100px;
+
+    input {
+      width: 100%;
+      text-align: center;
+      outline: none;
+      padding: 18px 10px;
+      font-size: 1.3rem;
+      border-radius: 0;
+      border: 1px solid $gray-200;
+      line-height: 1;
+      color: $black-100;
+      background-color: white;
+    }
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    button {
+      cursor: pointer;
+      padding: 4px 9px;
+      line-height: 1;
+      border-radius: 0;
+      border: 1px solid $gray-200;
+      font-size: 1.3rem;
+    }
+  }
+}
