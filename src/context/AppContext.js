@@ -23,18 +23,16 @@ export const AppContext = ({ children }) => {
     setTotalCost(subtotal + vatAmount);
   }, [subtotal, vatAmount]);
 
-  const handleCartProductQuantity = (type, product) => {
-    let products = [...productList];
-    let index = products?.findIndex((p) => p.id === product?.id);
-    if (type === "increment") {
-      products[index].quantity += 1;
-    } else if (type === "decrement") {
-      if (products[index].quantity === 1) return;
-      products[index].quantity -= 1;
-    }
-    products[index].cost = products[index].quantity * products[index].price;
-    setProductList(products);
-  };
+  const handleCartProducts = useCallback(
+    (product, quantity) => {
+      let products = [...productList];
+      let index = products?.findIndex((p) => p.id === product?.id);
+      products[index].quantity = quantity;
+      products[index].cost = products[index].quantity * products[index].price;
+      setProductList(products);
+    },
+    [productList]
+  );
 
   const handleRemoveFromCart = (product) => {
     let items = [...productList];
@@ -63,7 +61,7 @@ export const AppContext = ({ children }) => {
         vatAmount,
         totalCost,
         handleRemoveFromCart,
-        handleCartProductQuantity,
+        handleCartProducts,
       }}
     >
       {children}

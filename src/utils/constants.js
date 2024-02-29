@@ -1,3 +1,6 @@
+export const MIN_QUANTITY = 1;
+export const MAX_QUANTITY = 10;
+
 export const productsInCart = [
   {
     id: 1,
