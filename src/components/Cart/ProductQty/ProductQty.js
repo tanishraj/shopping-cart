@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Button } from "../../base/Button";
 import { TextInput } from "../../base/TextInput";
+import { Context } from "../../../context/context";
 import { MIN_QUANTITY, MAX_QUANTITY } from "../../../utils/constants";
 import "./ProductQty.scss";
 
-export const ProductQty = ({ product, handleCartProducts }) => {
+export const ProductQty = ({ product }) => {
+  const { handleCartProducts } = useContext(Context);
   const [quantity, setQuantity] = useState(product?.quantity);
 
   useEffect(() => {

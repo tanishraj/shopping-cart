@@ -6,13 +6,13 @@ import { Context } from "../../../context/context";
 import "./ProductItem.scss";
 
 export const ProductItem = ({ product }) => {
-  const { handleRemoveFromCart, handleCartProducts } = useContext(Context);
+  const { handleRemoveFromCart } = useContext(Context);
   return (
     <tr>
       <td data-label="Product">{product?.name}</td>
       <td data-label="Price">£{product?.price}</td>
       <td data-label="Qty">
-        <ProductQty product={product} handleCartProducts={handleCartProducts} />
+        <ProductQty product={product} />
       </td>
       <td data-label="Cost">
         <span>£{product?.cost} </span>
