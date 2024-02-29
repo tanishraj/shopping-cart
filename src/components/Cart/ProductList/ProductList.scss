@@ -1,0 +1,83 @@
+@import "../../../css-config/mixins.scss";
+@import "../../../css-config/variables.scss";
+
+table {
+  text-align: left;
+  border-collapse: collapse;
+  margin: 30px 0 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+  font-size: 1.2rem;
+
+  tr {
+    padding: 0.35em;
+
+    @include sm {
+      border: 3px solid $gray-100;
+      display: block;
+      margin-bottom: 0.625em;
+    }
+  }
+
+  th,
+  td {
+    padding: 0.625em;
+  }
+
+  th {
+    font-size: 0.85em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  thead tr {
+    border-bottom: 2px solid $gray-100;
+  }
+
+  @include sm {
+    border: 0;
+
+    thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+
+    td {
+      border-bottom: 1px solid $gray-100;
+      position: relative;
+      display: block;
+      font-size: 0.8em;
+      text-align: right;
+
+      &::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+      }
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+}
+
+table.product-list-container {
+  thead th {
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+  tbody tr:nth-child(even) {
+    background-color: $gray-50;
+    @include sm {
+      background: none;
+    }
+  }
+}

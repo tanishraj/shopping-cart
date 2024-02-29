@@ -1,0 +1,19 @@
+@import "../../../css-config/variables.scss";
+
+.remove-button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+
+  .icon {
+    margin-left: 20px;
+    position: relative;
+    top: 2px;
+    color: $primary-color;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
